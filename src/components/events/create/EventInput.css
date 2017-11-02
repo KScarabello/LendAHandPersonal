@@ -1,0 +1,39 @@
+.create-event-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #333333;
+    border-radius: 20px;
+    padding: 35px;
+    margin: 35px 35px 50px 35px;
+    background-color: #A9CEF4;
+        
+}
+
+@keyframes pound {
+	to { transform: scale(1.4); }
+}
+
+
+logo-image img{
+    animation: pound .5s infinite;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color:#333333;
+    border-radius: 20px;
+    border-width: 2px;
+    width: 80%;
+    margin: 20px;
+}
+
+.textfield-width{
+    width: 70%;
+    margin: 20px;
+}

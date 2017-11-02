@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Knewave|Questrial|Racing+Sans+One')
+
+
+.footer-container{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #071013;
+    color: whitesmoke; 
+    
+}
+
+.logo a{
+    font-family: 'Racing Sans One';
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.category-links ul li{
+    text-decoration: none;
+    list-style:none;
+}
+

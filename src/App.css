@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Racing+Sans+One");
+/* //TopNav component */
+.left-nav-links {
+  width: 33%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  color: #333333;
+  text-decoration: none; }
+
+.top-nav-bar a {
+  color: #333333;
+  font-family: 'Anton';
+  font-size: 15px; }
+
+.main-logo a {
+  width: 33%;
+  height: 145px;
+  font-size: 35px;
+  font-family: 'Racing Sans One';
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 25px;
+    padding-bottom: 25px; */ }
+
+.login-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 33%;
+  padding: 0px; }
+
+.top-nav-bar {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.ternary {
+  display: flex; }
+
+.logged-in {
+  justify-content: space-around; }
