@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -15,6 +16,7 @@ const Auth0Strategy = require('passport-auth0');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use( express.static( `${__dirname}/../build` ) );
 
 
 massive(config.dblink).then(db => {
@@ -109,6 +111,11 @@ app.post('/api/eventtouser', ec.addEventToUser);
 //app.post('/api/user', uc.createProfile) - but how does this work with Auth0?
 app.get('/api/user/:id', uc.getProfile);
 app.put('/api/user/:id', uc.updateProfile);
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const port = 3001;
 app.listen(port, () => { console.log(`Listening on port ${port}`) });
