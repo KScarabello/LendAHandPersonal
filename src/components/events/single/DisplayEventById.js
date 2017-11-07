@@ -47,7 +47,7 @@ handleCancel = (eventId, userId) => {
         userId: userId
     }
 
-    axios.delete(`http://localhost:3001/api/event/${eventId}`)
+    axios.delete(`/api/event/${eventId}`)
          .then(response => console.log(response))
 }
 
@@ -62,7 +62,7 @@ handleCancel = (eventId, userId) => {
 
     
 
-    axios.post('http://localhost:3001/api/eventtouser', events)
+    axios.post('/api/eventtouser', events)
         .then(response => {
             console.log(response)
             

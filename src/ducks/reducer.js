@@ -45,7 +45,7 @@ export function getUserInfo(){
 }
 
 export function setNewEvent(newEvent, cb){
-    const newEventToDisplay = axios.post('http://localhost:3001/api/event/', newEvent)
+    const newEventToDisplay = axios.post('/api/event/', newEvent)
             .then(response => {
                 console.log(response)
                 return response.data[0]
@@ -72,7 +72,7 @@ export function getCategoryEvents(category){
     // (!category) ? null :
     // selectCat = category.toString().replace(/ & /g, ' and ').replace(/ /g, '+').toLowerCase()
     
-    const catEvents = axios.get('http://localhost:3001/api/viewevents?category=' + selectCat)
+    const catEvents = axios.get('/api/viewevents?category=' + selectCat)
             .then(response => {
                
                 return response.data
@@ -86,7 +86,7 @@ export function getCategoryEvents(category){
 
 
 export function setEventId(id){
-     let eventId = axios.get('http://localhost:3001/api/events/' + id)
+     let eventId = axios.get('/api/events/' + id)
         .then(response => {
             // console.log(response)
             return response.data[0]     
