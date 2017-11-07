@@ -107,12 +107,12 @@ class TopNav extends Component{
                                 style={avatarStyle}/> 
                            
 
-                                <a href={process.env.logout} style={logOutStyle}>LOG OUT</a>
+                                <a href={process.env.REACT_APP_LOGOUT} style={logOutStyle}>LOG OUT</a>
 
                         </div> 
                         : 
                         <div className="login-button" >
-                            <a href={process.env.login} className="btn" style={linkStyle} >LOG IN</a>
+                            <a href={process.env.REACT_APP_LOGIN} className="btn" style={linkStyle} >LOG IN</a>
                         </div>
                         }
                    </div> 
