@@ -1,0 +1,14 @@
+.login-info-box{
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+    height: 15vh;
+    width: 30vw;
+    background-color: gray
+    
+}
+
+.login-info-box p{
+    font-size: 20px;
+    color: black;
+}

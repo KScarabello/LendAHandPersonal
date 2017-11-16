@@ -12,6 +12,7 @@ import DisplayMultEvents from './components/events/multiple/DisplayMultEvents';
 import About from './components/About';
 import Splashcontent from './components/Splashcontent';
 import Splashcontent2 from './components/Splashcontent2';
+import Demologin from './components/demologin/Demologin';
 
 export default (
 
@@ -22,6 +23,7 @@ export default (
                     <Slider />
                     <Splashcontent />
                     <Categories />
+                    <Demologin />
                     
                     <Footer />
                 </div>
