@@ -94,18 +94,17 @@ class TopNav extends Component{
 
             </div>
             <div className="login-div">
-              <div className="about">
+            <div className="about">
                 <Link to="/about" style={linkStyle}>ABOUT</Link>
-              </div>
-              <div>    
-                   <div className="ternary"> 
+            </div>
+            <div>    
+                <div className="ternary"> 
                         {this.props.user.id ? 
                         <div className="logged-in"> 
                                 <Avatar src={this.props.user.picture} 
                                 size={55}
                                 margin={10}
-                                style={avatarStyle}/> 
-                           
+                                style={avatarStyle}/>                            
 
                                 <a href={process.env.REACT_APP_LOGOUT} style={logOutStyle}>LOG OUT</a>
 
@@ -115,7 +114,7 @@ class TopNav extends Component{
                             <a href={process.env.REACT_APP_LOGIN} className="btn" style={linkStyle} >LOG IN</a>
                         </div>
                         }
-                   </div> 
+                </div> 
                 </div>
 
             </div> 

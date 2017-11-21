@@ -57,7 +57,7 @@ passport.use(new Auth0Strategy({
 }));
 
 passport.serializeUser(function (user, done) {
-    // console.log(user);
+    console.log(user);
     // var userInfo = {
     //     id: user.id,
     //     displayName: user.displayName,
@@ -73,15 +73,16 @@ passport.deserializeUser(function (user, done) {
 })
 
 //auth0 endpoints
-app.get('/login', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/',
-    failureRedirect: 'http://localhost:3000/#/',
+app.get('api/auth/login', passport.authenticate('auth0', {
+    successRedirect: process.env.SUCCESS_REDIRECT,
+    failureRedirect: process.env.FAILURE_REDIRECT,
     failureFlash: true
 }))
 
 app.get('/me', function (req, res, next) {
     console.log(req.user)
     if(!req.user){
+        console.log("bingo")
         return res.status(404).send('User not found')
     } else {
         return res.status(200).send(req.user);
@@ -90,7 +91,7 @@ app.get('/me', function (req, res, next) {
 
 app.get('/logout', (req, res) => {
     req.logOut();
-    return res.redirect(302, 'http://localhost:3000/#/');
+    return res.redirect(302, process.env.SUCCESS_REDIRECT);
 })
 
 
