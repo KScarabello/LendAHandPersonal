@@ -1,11 +1,10 @@
 
-const config = require('../config')
 const Auth0Strategy = require('passport-auth0');
 
 module.exports = new Auth0Strategy({
-    domain: config.domain,
-    clientID: config.clientID,
-    clientSecret: config.clientSecret,
+    domain: process.env.DOMAIN,
+    clientID: process.env.AUTH_CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: './login'
 }, function(accessToken, refreshToken, extraParams, profile, done){
     console.log(profile)
