@@ -73,7 +73,7 @@ passport.deserializeUser(function (user, done) {
 })
 
 //auth0 endpoints
-app.get('api/auth/login', passport.authenticate('auth0', {
+app.get('/api/auth/login', passport.authenticate('auth0', {
     successRedirect: process.env.SUCCESS_REDIRECT,
     failureRedirect: process.env.FAILURE_REDIRECT,
     failureFlash: true
