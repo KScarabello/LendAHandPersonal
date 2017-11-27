@@ -8,7 +8,6 @@ const ec = require('../controllers/events_controller');
 const uc = require('../controllers/users_controller');
 const strategy = require('./strategy');
 const passport = require('passport');
-const config = require('../config');
 const Auth0Strategy = require('passport-auth0');
 
 
@@ -19,7 +18,7 @@ app.use(cors());
 app.use( express.static( `${__dirname}/../build` ) );
 
 
-massive(config.dblink).then(db => {
+massive(process.DB_LINK).then(db => {
     app.set('db', db)
 }).catch(err => {
     console.log(err)
@@ -29,16 +28,16 @@ console.log(app.get('db'))
 app.use(session({
     resave: true,
     saveUninitialized: true,
-    secret: config.sessionsecret,
+    secret: process.env.SESSION_SECRET,
 }))
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new Auth0Strategy({
-    domain: config.domain,
-    clientID: config.clientID,
-    clientSecret: config.clientSecret,
+    domain: process.env.DOMAIN,
+    clientID: process.env.AUTH_CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: './login'
 }, function(accessToken, refreshToken, extraParams, profile, done){
     console.log(profile)
