@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 const Auth0Strategy = require('passport-auth0');
 
