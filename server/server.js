@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -6,11 +6,9 @@ const massive = require('massive');
 const session = require('express-session');
 const ec = require('../controllers/events_controller');
 const uc = require('../controllers/users_controller');
-const strategy = require('./strategy');
+//const strategy = require('./strategy');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
-
-
 
 const app = express();
 app.use(bodyParser.json());
