@@ -1,3 +1,3 @@
 SELECT * from Events
-WHERE category ILIKE %$1%
+WHERE category = $1
 LIMIT 10;

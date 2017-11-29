@@ -16,7 +16,7 @@ app.use(cors());
 app.use( express.static( `${__dirname}/../build` ) );
 
 
-massive(process.DB_LINK).then(db => {
+massive(process.env.DB_LINK).then(db => {
     app.set('db', db)
 }).catch(err => {
     console.log(err)
