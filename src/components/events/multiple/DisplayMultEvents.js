@@ -32,6 +32,10 @@ class DisplayMultEvents extends Component {
   
   render() {
 
+    const imgStyle = {
+      width: 700,
+      height: 400,
+    }
     
     let catEvents = null;
     if (this.props.currentCat) {
@@ -51,7 +55,7 @@ class DisplayMultEvents extends Component {
             titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
             onClick={()=>this.props.setEventId(cat.id)}>
 
-            <img src={cat.imageurl} />
+            <img src={cat.imageurl} style={imgStyle} />
           </GridTile>
         </div>
         </div>
